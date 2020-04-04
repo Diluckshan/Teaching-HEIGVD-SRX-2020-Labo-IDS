@@ -301,7 +301,7 @@ Vous pouvez aussi utiliser des captures Wireshark ou des fichiers snort.log.xxxx
 
 ---
 
---
+
 
 ### Trouver votre nom :
 
@@ -313,7 +313,7 @@ alert tcp any any -> any any (msg:"Mon nom!"; content:"Rubinstein"; sid:4000015;
 
 ---
 
-**Reponse :**  Cette règle alerte quand il aperçoit un paquet TCP, envoyé depuis n'importe quel source et port vers n'importe quel destination et port,  contenant le mot "Rubinstein".  le fichier alerte contiendra le titre  d' identifiant unique de la règle "sid ", suivi de msg "Mon nom".
+**Reponse :**  Cette règle alerte quand il aperçoit un paquet TCP, envoyé depuis n'importe quel source et port vers n'importe quel destination et port,  contenant le mot "Rubinstein".  le fichier alerte contiendra le titre  d' identifiant unique de la règle "sid : 4000015 et rev :1", suivi de msg "Mon nom".
 
 ---
 
@@ -327,17 +327,37 @@ sudo snort -c myrules.rules -i eth0
 
 ---
 
-**Reponse :**  
+**Reponse :** 
+
+pour la règle : `alert tcp any any -> any any (msg:"voyage"; content:"safetravel" ; sid:4000030; rev:2;)`
+
+Pendant, nous avons des messages de warning suivants qui se répètent dans le terminal : 
+
+WARNING : No preprocessors configured for policy 0.
+
+A l'arrêt nous avons 59 paquets qui était traités.
+
+![image-20200404222010584](/images/image-20200404222010584.png)
+
+
+
+
 
 ---
 
-Aller à un site web contenant dans son text votre nom ou votre mot clé que vous avez choisi (il faudra chercher un peu pour trouver un site en http...).
+Aller à un site web contenant dans son texte votre nom ou votre mot clé que vous avez choisi (il faudra chercher un peu pour trouver un site en http...).
 
 **Question 5: Que voyez-vous sur votre terminal quand vous visitez le site ?**
 
 ---
 
 **Reponse :**  
+
+Pendant on ne voit que des warning de no préprocesseur.
+
+
+
+
 
 ---
 
@@ -348,6 +368,16 @@ Arrêter Snort avec `CTRL-C`.
 ---
 
 **Reponse :**  
+
+ A l'arrêt de l'analyse,  Snort affiche le détails de analyse tel que le nombres de paquets qu'il a traité par catégories tel que tcp, udp ,etc: 
+
+![image-20200404222524454](/images/image-20200404222524454.png)
+
+Aussi, Snort détecte et lève des alertes sur des requêtes des sites contenants notre mot clé et met des infos dans le fichier alert (6 alertes et 6 logs) :  
+
+![image-20200404215949842](/images/image-20200404215949842.png)
+
+
 
 ---
 
@@ -360,8 +390,16 @@ Aller au répertoire /var/log/snort. Ouvrir le fichier `alert`. Vérifier qu'il 
 
 **Reponse :**  
 
----
+![image-20200404221435570](C:\Users\R.Diluckshan\AppData\Roaming\Typora\typora-user-images\image-20200404221435570.png)
 
+1. 1ère ligne : alerte avec le numéro de sid ainsi que le nom de msg choisi "voyage"
+2. 2ème ligne : Priorité de l'alerte que vaut 0 par défaut, mais qui peut être modifiée.
+3. 3ème ligne : Des informations sur les requêtes effectuées sur l'adresse IP du site.(date, heure , adresse source, port -> adresse destination, port).
+4. les 2 derniers ligne concernent les information sur les paquets traversés. 
+
+
+
+---
 
 --
 

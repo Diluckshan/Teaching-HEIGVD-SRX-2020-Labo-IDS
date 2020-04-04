@@ -1,3 +1,5 @@
+Auteur : Diluckshan Ravindranathan 
+
 # Teaching-HEIGVD-SRX-2020-Laboratoire-IDS
 
 **Ce travail de laboratoire est à faire en équipes de 2 personnes** (oui... en remote...). Je vous laisse vous débrouiller ;-)
@@ -98,36 +100,37 @@ snort -v -i eth0
 
 **ATTENTION : assurez-vous de bien choisir l'interface qui se trouve en mode bridge/promiscuous. Elle n'est peut-être pas eth0 chez-vous!**
 
-Snort s'execute donc et montre sur l'écran tous les entêtes des paquets IP qui traversent l'interface eth0. Cette interface est connectée à l'interface réseau de votre machine hôte à travers le bridge de VirtualBox.
+Snort exécute donc et montre sur l'écran tous les entêtes des paquets IP qui traversent l'interface eth0. Cette interface est connectée à l'interface réseau de votre machine hôte à travers le bridge de VirtualBox.
 
 Pour arrêter Snort, il suffit d'utiliser `CTRL-C` (**attention** : il peut arriver de temps à autres que snort ne réponde pas correctement au signal d'arrêt. Dans ce cas-là, il faudra utiliser `kill` pour arrêter le process).
 
 ## Utilisation comme un IDS
 
-Pour enregistrer seulement les alertes et pas tout le trafic, on execute Snort en mode IDS. Il faudra donc spécifier un fichier contenant des règles. 
+Pour enregistrer seulement les alertes et pas tout le trafic, on exécute Snort en mode IDS. Il faudra donc spécifier un fichier contenant des règles. 
 
 Il faut noter que `/etc/snort/snort.config` contient déjà des références aux fichiers de règles disponibles avec l'installation par défaut. Si on veut tester Snort avec des règles simples, on peut créer un fichier de config personnalisé (par exemple `mysnort.conf`) et importer un seul fichier de règles utilisant la directive "include".
 
-Les fichiers de règles sont normalement stockes dans le repertoire `/etc/snort/rules/`, mais en fait un fichier de config et les fichiers de règles peuvent se trouver dans n'importe quel repertoire. 
+Les fichiers de règles sont normalement stockes dans le répertoire `/etc/snort/rules/`, mais en fait un fichier de config et les fichiers de règles peuvent se trouver dans n'importe quel répertoire. 
 
-Par exemple, créez un fichier de config `mysnort.conf` dans le repertoire `/etc/snort` avec le contenu suivant :
+Par exemple, créez un fichier de config `mysnort.conf` dans le répertoire `/etc/snort` avec le contenu suivant :
 
 ```
 include /etc/snort/rules/icmp2.rules
 ```
 
-Ensuite, créez le fichier de règles `icmp2.rules` dans le repertoire `/etc/snort/rules/` et rajoutez dans ce fichier le contenu suivant :
+Ensuite, créez le fichier de règles `icmp2.rules` dans le répertoire `/etc/snort/rules/` et rajoutez dans ce fichier le contenu suivant :
 
 `alert icmp any any -> any any (msg:"ICMP Packet"; sid:4000001; rev:3;)`
 
-On peut maintenant executer la commande :
+On peut maintenant exécuter la commande :
 
 ```
 snort -c /etc/snort/mysnort.conf
 ```
 
-Vous pouvez maintenant faire quelques pings depuis votre hôte et regarder les résultas dans le fichier d'alertes contenu dans le repertoire `/var/log/snort/`. 
+Vous pouvez maintenant faire quelques pings depuis votre hôte et regarder les résultats dans le fichier d'alertes contenu dans le répertoire `/var/log/snort/`
 
+. 
 
 ## Ecriture de règles
 
@@ -152,7 +155,7 @@ Cette règle décrit une alerte générée quand Snort trouve un paquet avec tou
 * Emis depuis n'importe quelle adresse et depuis n'importe quel port
 * A destination du réseau identifié par l'adresse 192.168.1.0/24 sur le port 111
 
-Le text jusqu'au premier parenthèse est l'entête de la règle. 
+Le texte jusqu'au premier parenthèse est l'entête de la règle. 
 
 ```
 alert tcp any any -> 192.168.1.0/24 111
@@ -286,7 +289,7 @@ Vous pouvez aussi utiliser des captures Wireshark ou des fichiers snort.log.xxxx
 
 ---
 
-**Reponse :**  
+**Reponse :**  Les préprocesseurs sont des modules d’extension pour arranger ou modifier les paquets de données avant que le moteur de détection n’intervienne. Certains préprocesseurs détectent aussi des anomalies dans les entêtes des paquets et génèrent alors des alertes.
 
 ---
 
@@ -294,7 +297,7 @@ Vous pouvez aussi utiliser des captures Wireshark ou des fichiers snort.log.xxxx
 
 ---
 
-**Reponse :**  
+**Reponse :**  On a un cet warning car le préprocesseur snort n'est pas chargé. Il faut aussi les activé dans le fichiers de configuration.
 
 ---
 
@@ -310,7 +313,7 @@ alert tcp any any -> any any (msg:"Mon nom!"; content:"Rubinstein"; sid:4000015;
 
 ---
 
-**Reponse :**  
+**Reponse :**  Cette règle alerte quand il aperçoit un paquet TCP, envoyé depuis n'importe quel source et port vers n'importe quel destination et port,  contenant le mot "Rubinstein".  le fichier alerte contiendra le titre  d' identifiant unique de la règle "sid ", suivi de msg "Mon nom".
 
 ---
 

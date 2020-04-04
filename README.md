@@ -390,7 +390,7 @@ Aller au répertoire /var/log/snort. Ouvrir le fichier `alert`. Vérifier qu'il 
 
 **Reponse :**  
 
-![image-20200404221435570](C:\Users\R.Diluckshan\AppData\Roaming\Typora\typora-user-images\image-20200404221435570.png)
+![image-20200404221435570](/images/image-20200404221435570.png)
 
 1. 1ère ligne : alerte avec le numéro de sid ainsi que le nom de msg choisi "voyage"
 2. 2ème ligne : Priorité de l'alerte que vaut 0 par défaut, mais qui peut être modifiée.

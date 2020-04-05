@@ -533,6 +533,7 @@ Lancer Wireshark et faire une capture du trafic sur l'interface connectée au br
 **Reponse :**  
 
 -r <file> pour analyser un fichier pcap ou log.
+ 
 ---
 
 Utiliser l'option correcte de Snort pour analyser le fichier de capture Wireshark.

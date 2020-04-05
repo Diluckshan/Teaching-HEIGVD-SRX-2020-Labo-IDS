@@ -297,7 +297,7 @@ Vous pouvez aussi utiliser des captures Wireshark ou des fichiers snort.log.xxxx
 
 ---
 
-**Reponse :**  On a un cet warning car le préprocesseur snort n'est pas chargé. Il faut aussi les activé dans le fichiers de configuration.
+**Reponse :**  On a ce warning car le préprocesseur snort n'est pas chargé. Il faut aussi les activer dans le fichiers de configuration.
 
 ---
 
@@ -313,7 +313,7 @@ alert tcp any any -> any any (msg:"Mon nom!"; content:"Rubinstein"; sid:4000015;
 
 ---
 
-**Reponse :**  Cette règle alerte quand il aperçoit un paquet TCP, envoyé depuis n'importe quel source et port vers n'importe quel destination et port,  contenant le mot "Rubinstein".  le fichier alerte contiendra le titre  d' identifiant unique de la règle "sid : 4000015 et rev :1", suivi de msg "Mon nom".
+**Reponse :**  Cette règle alerte quand elle aperçoit un paquet TCP, envoyé depuis n'importe quel source et port vers n'importe quel destination et port,  contenant le mot "Rubinstein".  Le fichier alerte contiendra le titre d'identifiant unique de la règle "sid : 4000015 et rev :1", suivi de msg "Mon nom".
 
 ---
 
@@ -329,13 +329,13 @@ sudo snort -c myrules.rules -i eth0
 
 **Reponse :** 
 
-pour la règle : `alert tcp any any -> any any (msg:"voyage"; content:"safetravel" ; sid:4000030; rev:2;)`
+Pour la règle : `alert tcp any any -> any any (msg:"voyage"; content:"safetravel" ; sid:4000030; rev:2;)`
 
-Pendant, nous avons des messages de warning suivants qui se répètent dans le terminal : 
+Pendant l'analyse de snort, nous avons des messages de warning suivants qui se répètent dans le terminal : 
 
 WARNING : No preprocessors configured for policy 0.
 
-A l'arrêt nous avons 59 paquets qui était traités.
+A l'arrêt nous avons 59 paquets qui étaient traités.
 
 ![image-20200404222010584](/images/image-20200404222010584.png)
 
@@ -353,7 +353,7 @@ Aller à un site web contenant dans son texte votre nom ou votre mot clé que vo
 
 **Reponse :**  
 
-Pendant on ne voit que des warning de no préprocesseur.
+Pendant l'analyse de snort on ne voit que des warning de no préprocesseur.
 
 
 
@@ -369,7 +369,7 @@ Arrêter Snort avec `CTRL-C`.
 
 **Reponse :**  
 
- A l'arrêt de l'analyse,  Snort affiche le détails de analyse tel que le nombres de paquets qu'il a traité par catégories tel que tcp, udp ,etc: 
+ A l'arrêt de l'analyse,  Snort affiche les détails de analyse tel que le nombre de paquets qu'il a traité par catégories tel que tcp, udp ,etc: 
 
 ![image-20200404222524454](/images/image-20200404222524454.png)
 
@@ -395,7 +395,7 @@ Aller au répertoire /var/log/snort. Ouvrir le fichier `alert`. Vérifier qu'il 
 1. 1ère ligne : alerte avec le numéro de sid ainsi que le nom de msg choisi "voyage"
 2. 2ème ligne : Priorité de l'alerte que vaut 0 par défaut, mais qui peut être modifiée.
 3. 3ème ligne : Des informations sur les requêtes effectuées sur l'adresse IP du site.(date, heure , adresse source, port -> adresse destination, port).
-4. les 2 derniers ligne concernent les information sur les paquets traversés. 
+4. les 2 dernières lignes concernent les informations sur les paquets traversés. 
 
 
 

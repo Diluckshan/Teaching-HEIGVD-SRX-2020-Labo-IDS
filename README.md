@@ -544,6 +544,8 @@ Utiliser l'option correcte de Snort pour analyser le fichier de capture Wireshar
 
 **Reponse :**  
 
+Non il n'y pas de différence car snort va lire et analyser le fichier de capture comme si il était en train de reçevoir les informations en temmps réel.
+
 ---
 
 **Question 18: Est-ce que des alertes sont aussi enregistrées dans le fichier d'alertes?**

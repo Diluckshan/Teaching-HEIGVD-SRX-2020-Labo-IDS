@@ -413,6 +413,14 @@ Ecrire une règle qui journalise (sans alerter) un message à chaque fois que Wi
 
 **Reponse :**  
 
+La règle : `log tcp 192.168.1.20 any -> 91.198.174.192 any (msg:"wikipidia visit"; sid:4000030; rev:2;)`
+
+Le chemin : `/var/log/snort`
+
+un fichier du nom snort.log.* , qui peut être ouvert par wireshark
+
+![image-20200405213812257](/images/sunrise.pdf)
+
 ---
 
 --
@@ -427,6 +435,11 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 **Reponse :**  
 
+`alert icmp any any -> 10.192.93.91 any (itype:8; msg:"Ping sur ma machine";
+sid:21; rev:1)`
+
+
+
 ---
 
 
@@ -436,6 +449,8 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 **Reponse :**  
 
+Pour identifier seulement des pings entrants, on a créé une règle qui alerte les paquets icmp de type 8  d' adresse ip et port de source en `any any` et celui de destination d'adresse et port de`adresse de hôte et any`
+
 ---
 
 
@@ -443,7 +458,7 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse :**  
+**Reponse :**  `var/log/snort/alert`
 
 ---
 
@@ -452,7 +467,13 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 ---
 
-**Reponse :**  
+**Reponse :** 
+
+ ![image-20200405222604301](/images/image-20200405222604301.png)
+
+![image-20200405222804413](/images/image-20200405222804413.png)
+
+Détails de paquets dans le fichier alert et un fichier log qui peut être ouvert par wireshark
 
 ---
 
@@ -467,6 +488,11 @@ Modifier votre règle pour que les pings soient détectés dans les deux sens.
 ---
 
 **Reponse :**  
+
+`alert icmp any any <> 10.192.93.91 any (itype:8; msg:"Ping sur ma machine";
+sid:21; rev:1)`
+
+il suffit d'ajouter une flèche dans ce sens `<` à notre règle pour détecter les pings depuis hôte. 
 
 ---
 

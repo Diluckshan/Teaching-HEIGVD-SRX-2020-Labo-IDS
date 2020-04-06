@@ -501,8 +501,6 @@ Cette règle m' alerte de tous les machines qui essaient de connecter à ma mach
 
 ---
 
---
-
 ### Analyse de logs
 
 Lancer Wireshark et faire une capture du trafic sur l'interface connectée au bridge. Générez du trafic avec votre machine hôte qui corresponde à l'une des règles que vous avez ajouté à votre fichier de configuration personnel. Arrêtez la capture et enregistrez-la dans un fichier.
@@ -538,8 +536,6 @@ Non il n'y pas de différence car snort va lire et analyser le fichier de captur
 Oui , Snort analyse le fichier comme les informations en temps réel, donc il les stocke dans alerte. 
 
 ---
-
---
 
 ### Contournement de la détection
 

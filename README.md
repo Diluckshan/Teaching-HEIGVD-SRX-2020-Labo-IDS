@@ -506,10 +506,11 @@ Essayer d'écrire une règle qui Alerte qu'une tentative de session SSH a été 
 
 **Reponse :**  
 
-`alert tcp any any -> 192.168.1.20 22 (msg:"Tentative de login SSH";sid:1000; rev:1)`
+`alert tcp any any -> 192.168.1.20 22 (msg:"Tentative de login SSH";sid:1000000; rev:1)`
+
+Cette règle m' alerte de tous les machines qui essaient de connecter à ma machine. Cette règle détecte les paquets avec protocoles tcp d'adresse de source et port `any any ` , adresse de destination et port`192.168.1.20 22`, avec un nom de message de `Tentative de login SSH`
 
 ---
-
 
 **Question 15: Montrer le message d'alerte enregistré dans le fichier d'alertes.** 
 
@@ -517,7 +518,9 @@ Essayer d'écrire une règle qui Alerte qu'une tentative de session SSH a été 
 
 **Reponse :**  
 
-voici l'image
+
+
+![image-20200406112600041](/images/image-20200406112600041.png)
 
 ---
 
@@ -651,6 +654,5 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 **Reponse :**  
 
 ---
-
 
 <sub>This guide draws heavily on http://cs.mvnu.edu/twiki/bin/view/Main/CisLab82014</sub>

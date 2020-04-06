@@ -631,6 +631,8 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ![image-20200406172801500](/images/image-20200406172801500.png)
 
+La règle ne fonctionne pas avec preprocessor.
+
 ---
 
 **Question 25: A quoi sert le `SSL/TLS Preprocessor` ?**

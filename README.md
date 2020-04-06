@@ -616,6 +616,8 @@ Reprendre l'exercice de la partie [Trouver votre nom](#trouver-votre-nom-). Essa
 
 **Reponse :**  
 
+Nous avons essayer tous les paramètres possibles de fragrouter , de ip fragments  jusqu'à m2 dans le commande`fragrouter -i eth0 parametre`, il a aucun qui semble marcher. Tous les paquets sont détectés par snort.
+
 ---
 
 
@@ -626,6 +628,8 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 ---
 
 **Reponse :**  
+
+![image-20200406172801500](/images/image-20200406172801500.png)
 
 ---
 

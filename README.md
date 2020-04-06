@@ -582,7 +582,7 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 **Reponse :**  
 
 `fragtest` va tenter d'échapper aux IDS en utilisant des requêtes "ICMP echo" fragementée afin de déterminer exactement quel type de fragement de message ICMP sont traité et reçoive une réponse de la part de la cible.
-`fragroute` va intercepte, modifie et réécrit le trafic de sortie d'une machine, par exemple celle d'un attaquant, en fragementant les paquets, par exemple de la manière que fragtest aura déterminé. Cela permetera à tous le trafique de l'attaquant d'éviter les IDS.
+`fragroute` va intercepte, modifie et réécrit le trafic de sortie d'une machine, par exemple celle d'un attaquant, en fragementant les paquets, par exemple de la manière que fragtest aura déterminé. Cela permetera à tout le trafic de l'attaquant d'éviter une éventuelle détéction d'attaque de la part des IDS.
 
 ---
 

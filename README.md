@@ -301,8 +301,6 @@ Vous pouvez aussi utiliser des captures Wireshark ou des fichiers snort.log.xxxx
 
 ---
 
-
-
 ### Trouver votre nom :
 
 Considérer la règle simple suivante:
@@ -339,10 +337,6 @@ A l'arrêt nous avons 59 paquets qui étaient traités.
 
 ![image-20200404222010584](/images/image-20200404222010584.png)
 
-
-
-
-
 ---
 
 Aller à un site web contenant dans son texte votre nom ou votre mot clé que vous avez choisi (il faudra chercher un peu pour trouver un site en http...).
@@ -354,10 +348,6 @@ Aller à un site web contenant dans son texte votre nom ou votre mot clé que vo
 **Reponse :**  
 
 Pendant l'analyse de snort on ne voit que des warning de no préprocesseur.
-
-
-
-
 
 ---
 
@@ -377,8 +367,6 @@ Aussi, Snort détecte et lève des alertes sur des requêtes des sites contenant
 
 ![image-20200404215949842](/images/image-20200404215949842.png)
 
-
-
 ---
 
 
@@ -397,11 +385,7 @@ Aller au répertoire /var/log/snort. Ouvrir le fichier `alert`. Vérifier qu'il 
 3. 3ème ligne : Des informations sur les requêtes effectuées sur l'adresse IP du site.(date, heure , adresse source, port -> adresse destination, port).
 4. les 2 dernières lignes concernent les informations sur les paquets traversés. 
 
-
-
 ---
-
---
 
 ### Detecter une visite à Wikipedia
 
@@ -422,8 +406,6 @@ un fichier du nom snort.log.* , qui peut être ouvert par wireshark
 ![image-20200405213812257](/images/sunrise.pdf)
 
 ---
-
---
 
 ### Detecter un ping d'un autre système
 
@@ -475,8 +457,6 @@ Détails de paquets dans le fichier alert et un fichier log qui peut être ouver
 
 ---
 
---
-
 ### Detecter les ping dans les deux sens
 
 Modifier votre règle pour que les pings soient détectés dans les deux sens.
@@ -492,9 +472,6 @@ Modifier votre règle pour que les pings soient détectés dans les deux sens.
 il suffit d'ajouter une flèche dans ce sens `<` à notre règle pour détecter les pings depuis hôte. 
 
 ---
-
-
---
 
 ### Detecter une tentative de login SSH
 
@@ -607,7 +584,6 @@ L'idée de la modélisation de cible est de donner autant d'information à l'IDS
 
 ---
 
-
 Reprendre l'exercice de la partie [Trouver votre nom](#trouver-votre-nom-). Essayer d'offusquer la détection avec `fragroute`.
 
 **Question 23: Quel est le résultat de votre tentative ?**
@@ -621,7 +597,6 @@ Nous avons essayer tous les paramètres possibles de fragrouter , de ip fragment
 Normalement, à l'aide de fragrouter on s'attendrait à pouvoir passer au travers de snort sans délencher d'alerte.
 
 ---
-
 
 Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocessor` et refaire la tentative.
 
@@ -649,7 +624,6 @@ Normalement une fois ce module ajouté à snort on s'attendrait à ce que fragro
 
 ---
 
-
 **Question 26: A quoi sert le `Sensitive Data Preprocessor` ?**
 
 ---
@@ -661,7 +635,6 @@ Normalement une fois ce module ajouté à snort on s'attendrait à ce que fragro
 ---
 
 ### Conclusions
-
 
 **Question 27: Donnez-nous vos conclusions et votre opinion à propos de snort**
 

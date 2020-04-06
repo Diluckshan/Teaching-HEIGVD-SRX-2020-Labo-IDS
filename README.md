@@ -586,11 +586,10 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 **Reponse :**  
 
-`fragtest` va tenter d'échapper aux IDS en utilisant des requêtes "ICMP echo" fragementée afin de déterminer exactement quel type de fragement de message ICMP sont traité et reçoive une réponse de la part de la cible.
-`fragroute` va intercepte, modifie et réécrit le trafic de sortie d'une machine, par exemple celle d'un attaquant, en fragementant les paquets, par exemple de la manière que fragtest aura déterminé. Cela permetera à tout le trafic de l'attaquant d'éviter une éventuelle détéction d'attaque de la part des IDS.
+`fragtest` va tenter d'échapper aux IDS en utilisant des requêtes "ICMP echo" fragmentées afin de déterminer exactement quel type de fragment de message ICMP sont traité et reçoive une réponse de la part de la cible.
+`fragroute`  intercepte, modifie et réécrit le trafic de sortie d'une machine, par exemple celle d'un attaquant, en fragmentant les paquets, par exemple de la manière que fragtest aura déterminé. Cela permettra à tout le trafic de l'attaquant d'éviter une éventuelle détection d'attaque de la part des IDS.
 
 ---
-
 
 **Question 22: Qu'est-ce que le `Frag3 Preprocessor` ? A quoi ça sert et comment ça fonctionne ?**
 
@@ -600,11 +599,11 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 `Frag3 Preprocessor` est un module de défragmentation IP basé sur la cible pour Snort. Il a pour but :
   - d'accélérer le traitement et simplifie la gestion de l'information.
-  - de modéliser la cible (système que l'on protège) sur le résaux pour mettre en place des métohde d'anti-évasion des IDS.
+  - de modéliser la cible (système que l'on protège) sur le réseaux pour mettre en place des méthode d'anti-évasion des IDS.
 
-`Frag3 Preprocessor` va utiliser plusieurs structure de donné en interne afin d'avoir des performances beaucoup plus stables et prédictibles dans tous type d'environnements, y compris des environnements très fragementés.
+`Frag3 Preprocessor` va utiliser plusieurs structure de donné en interne afin d'avoir des performances beaucoup plus stables et prédictibles dans tous type d'environnements, y compris des environnements très fragmentés.
 
-L'idée de la modélisation de cible est de donner autant d'information à l'IDS qu'un attaquant pourrait obtenir, car si un attaquant a plus d'informations que l'IDS il devient très difficile de déffendre le système.
+L'idée de la modélisation de cible est de donner autant d'information à l'IDS qu'un attaquant pourrait obtenir, car si un attaquant a plus d'informations que l'IDS il devient très difficile de défendre le système.
 
 ---
 
@@ -650,7 +649,7 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 **Reponse :**  
 
-`Sensitive Data Preprocessor` est un module qui filtre et analyse des PII (Personally Identifiable Information). Cela concerne notamment des numéros de carte de crédis, des numéros de sécurité social et des adresse e-mail. Dans une certaine limite on peut également définir nos propre PII.
+`Sensitive Data Preprocessor` est un module qui filtre et analyse des PII (Personally Identifiable Information). Cela concerne notamment des numéros de carte de crédits, des numéros de sécurité social et des adresse e-mail. Dans une certaine limite on peut également définir nos propre PII.
 
 ---
 

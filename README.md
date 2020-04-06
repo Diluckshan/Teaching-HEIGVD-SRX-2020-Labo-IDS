@@ -592,6 +592,10 @@ Faire des recherches à propos des outils `fragroute` et `fragtest`.
 
 **Reponse :**  
 
+`Frag3 Preprocessor` est un module de défragmentation IP basé sur la cible pour Snort. Il a pour but :
+  - d'accélérer le traitement et simplifie la gestion de l'information.
+  - de modéliser la cible (système que l'on protège) sur le résaux pour mettre en place des métohde d'anti-évasion des IDS.
+
 ---
 
 

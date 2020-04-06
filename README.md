@@ -659,6 +659,8 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 **Reponse :**  
 
+Snort est assez compliqué à mettre en place et configurer correctement en bonne partie à cause du nombre important de possibilités qu'il offre et que la configuration d'un IDS est assez sensible si on veut qu'il soit efficace. Une fois mis en place ça semble être un logiciel flexible et puissant, surtout pour un logiciel open source et gratuit. Installer snort permet d'ajouter un bon mur de protection supplémentaire qui, même si il n'est pas infaillible, rendra la tâche plus compliquée pour un attaquant.
+
 ---
 
 <sub>This guide draws heavily on http://cs.mvnu.edu/twiki/bin/view/Main/CisLab82014</sub>

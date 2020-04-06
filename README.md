@@ -610,7 +610,6 @@ L'idée de la modélisation de cible est de donner autant d'information à l'IDS
 
 Reprendre l'exercice de la partie [Trouver votre nom](#trouver-votre-nom-). Essayer d'offusquer la détection avec `fragroute`.
 
-
 **Question 23: Quel est le résultat de votre tentative ?**
 
 ---
@@ -622,7 +621,6 @@ Reprendre l'exercice de la partie [Trouver votre nom](#trouver-votre-nom-). Essa
 
 Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocessor` et refaire la tentative.
 
-
 **Question 24: Quel est le résultat ?**
 
 ---
@@ -631,14 +629,13 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 ---
 
-
 **Question 25: A quoi sert le `SSL/TLS Preprocessor` ?**
 
 ---
 
 **Reponse :**  
 
-`SSL/TLS Preprocessor` est un module qui va inspecter le trafic SSL et TLS et déterminer si et quand arrèter l'inspection d'un échange. Dans une connexion SSL le but est typiquement d'analyser le SSL "handshake" puis une fois la connexion établie d'ignorer le trafic chiffré et ceci pour des raisons de performance et de réduction des faux positifs.
+`SSL/TLS Preprocessor` est un module qui va inspecter le trafic SSL et TLS et déterminer si et quand arrêter l'inspection d'un échange. Dans une connexion SSL le but est typiquement d'analyser le SSL "handshake" puis une fois la connexion établie d'ignorer le trafic chiffré et ceci pour des raisons de performance et de réduction des faux positifs.
 
 ---
 

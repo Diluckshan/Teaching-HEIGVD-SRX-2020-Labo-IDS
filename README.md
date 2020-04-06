@@ -435,13 +435,11 @@ Ecrire une règle qui alerte à chaque fois que votre système reçoit un ping d
 
 **Reponse :**  
 
-`alert icmp any any -> 10.192.93.91 any (itype:8; msg:"Ping sur ma machine";
-sid:21; rev:1)`
+`alert icmp any any -> 192.168.1.20 any (itype:8; msg:"Ping hote"; sid:1000000; rev:1)`
 
 
 
 ---
-
 
 **Question 10: Comment avez-vous fait pour que ça identifie seulement les pings entrants ?**
 
@@ -489,8 +487,7 @@ Modifier votre règle pour que les pings soient détectés dans les deux sens.
 
 **Reponse :**  
 
-`alert icmp any any <> 10.192.93.91 any (itype:8; msg:"Ping sur ma machine";
-sid:21; rev:1)`
+`alert icmp any any <> 192.168.1.20 any (itype:8; msg:"Ping entrant et sortant du hote"; sid:1000000; rev:1)`
 
 il suffit d'ajouter une flèche dans ce sens `<` à notre règle pour détecter les pings depuis hôte. 
 
@@ -508,6 +505,8 @@ Essayer d'écrire une règle qui Alerte qu'une tentative de session SSH a été 
 ---
 
 **Reponse :**  
+
+`alert tcp any any -> 192.168.1.20 22 (msg:"Tentative de login SSH";sid:1000; rev:1)`
 
 ---
 
@@ -533,7 +532,7 @@ Lancer Wireshark et faire une capture du trafic sur l'interface connectée au br
 **Reponse :**  
 
 -r <file> pour analyser un fichier pcap ou log.
- 
+
 ---
 
 Utiliser l'option correcte de Snort pour analyser le fichier de capture Wireshark.

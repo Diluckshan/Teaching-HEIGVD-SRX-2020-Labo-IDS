@@ -618,6 +618,8 @@ Reprendre l'exercice de la partie [Trouver votre nom](#trouver-votre-nom-). Essa
 
 Nous avons essayer tous les paramètres possibles de fragrouter , de ip fragments  jusqu'à m2 dans le commande`fragrouter -i eth0 parametre`, il a aucun qui semble marcher. Tous les paquets sont détectés par snort.
 
+Normalement, à l'aide de fragrouter on s'attendrait à pouvoir passer au travers de snort sans délencher d'alerte.
+
 ---
 
 
@@ -632,6 +634,8 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 ![image-20200406172801500](/images/image-20200406172801500.png)
 
 La règle ne fonctionne pas avec preprocessor.
+
+Normalement une fois ce module ajouté à snort on s'attendrait à ce que fragrouter ne permet plus de passer au travers de snort et que même si fragrouter est utilisé des alertes soit émise.
 
 ---
 

@@ -645,6 +645,8 @@ Modifier le fichier `myrules.rules` pour que snort utiliser le `Frag3 Preprocess
 
 **Reponse :**  
 
+`Sensitive Data Preprocessor` est un module qui filtre et analyse des PII (Personally Identifiable Information). Cela concerne notamment des numéros de carte de crédis, des numéros de sécurité social et des adresse e-mail. Dans une certaine limite on peut également définir nos propre PII.
+
 ---
 
 ### Conclusions
